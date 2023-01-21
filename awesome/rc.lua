@@ -340,10 +340,13 @@
 
       -- Rofi
       awful.key({ modkey },            "r",     function ()
-      awful.util.spawn("rofi -show-icons -show drun") end,
-	      {description = "run rofi", group = "awesome"}),
+      awful.util.spawn("rofi -show-icons -show drun -font 'Iosevka NerdFont 9'") end,
+	      {description = "run rofi", group = "utilities"}),
 
-
+      awful.key({ modkey, "Shift" },   "r",     function ()
+      awful.util.spawn("rofi -show window -font 'Monospace 9'") end,
+	      {description = "run rofi", group = "utilities"}),
+      	
       -- Launch Browser
       awful.key({ modkey },            "b",     function ()
       awful.util.spawn("firefox") end,
@@ -351,8 +354,8 @@
 
       -- Launch FM
       awful.key({ modkey },            "y",     function ()
-      awful.util.spawn("Thunar") end,
-              {description = "Thunar", group = "applications"}),
+      awful.util.spawn("pcmanfm") end,
+              {description = "Pcmanfm", group = "applications"}),
 
       -- Launch IDE
       awful.key({ modkey },            "v",     function ()
@@ -536,7 +539,7 @@
       },
 
       { rule_any = {
-        class = { "Zathura", "Thunar", "thonny", "Apache NetBeans IDE 14", "Soffice", "PacketTracer", "Notepadqq" }
+        class = { "Zathura", "Pcmanfm", "thonny", "Apache NetBeans IDE 14", "Soffice", "PacketTracer", "Notepadqq" }
         },properties = { tag = "birojs", border_width = 4, floating = true }
       },
 
