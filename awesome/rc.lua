@@ -63,7 +63,8 @@
 
   -- This is used later as the default terminal and editor to run.
   --terminal = "urxvt"
-  terminal = "alacritty"
+  --terminal = "alacritty"
+  terminal = "wezterm"
   editor = os.getenv("vim") or "nano"
   editor_cmd = terminal .. " -e " .. editor
 
@@ -184,7 +185,7 @@
 	    set_wallpaper(s)
 
 	    -- Each screen has its own tag table.
-	    local names = { "kods", "internets", "e-pasts", "birojs", "dizains", "spēles"}
+	    local names = { "kod", "internet", "posta", "ofis", "tasarım", "oyunlar"}
 	    local l = awful.layout.suit  -- Just to save some typing: use an alias.
 	    local layouts = { l.floating, l.tile, l.floating, l.fair, l.max,
 	    l.floating, l.tile.left, l.floating, l.floating }
@@ -524,48 +525,48 @@
       },
 
       { rule = {
-        class = "Alacritty"
+        class = "wezterm"
         },properties = { screen = 1, border_width = 5, floating = true }
       },
 
       { rule = {
         class = "firefox"
-        },properties = { screen = 1, border_width = 6, tag = "internets", maximized_horizontal = true }
+        },properties = { screen = 1, border_width = 6, tag = "internet", maximized_horizontal = true }
       },
 
       { rule_any = {
         class = {"vlc", "mpv", "Deluge-gtk", "gimp", "inkscape" }
-        },properties = { tag = "dizains", border_width = 5, floating = true }
+        },properties = { tag = "tasarım", border_width = 5, floating = true }
       },
 
       { rule_any = {
         class = { "Zathura", "Pcmanfm", "thonny", "Apache NetBeans IDE 14", "Soffice", "PacketTracer", "Notepadqq" }
-        },properties = { tag = "birojs", border_width = 4, floating = true }
+        },properties = { tag = "ofis", border_width = 4, floating = true }
       },
 
       { rule_any = {
-        class = { "TelegramDesktop", "Signal", "thunderbird" }
-        },properties = { screen = 1, borderwidth = 3, tag = "e-pasts", titlebars_enabled = false, floating = true }
+        class = { "TelegramDesktop", "Signal", "thunderbird", "whatsdesk" }
+        },properties = { screen = 1, borderwidth = 3, tag = "posta", titlebars_enabled = false, floating = true }
       },
 
       { rule = {
         class = "SimpleScreenRecorder"
-        },properties = { screen = 1, borderwidth = 4, floating = true, tag = "dizains" } 
+        },properties = { screen = 1, borderwidth = 4, floating = true, tag = "tasarım" } 
       },
 
       { rule_any = {
-        class = { "Lxappearance", "feh", "Spek", "Pavucontrol", "fcitx5-config-qt", "galculator", "Arandr", "simple-scan", "guvcview" }
+        class = { "Lxappearance", "feh", "Spek", "Pavucontrol", "fcitx-config-gtk3", "galculator", "Arandr", "simple-scan", "guvcview", "Gtumb" }
         },properties = { floating = true }
       },
 
       { rule_any = {
         instance = { "stella", "mgba-qt", "lbreakout2" },
-        },properties = { tag = "spēles", border_width = 5, floating = true }
+        },properties = { tag = "oyunlar", border_width = 5, floating = true }
       },
 
       { rule_any = {
         name = {"Minetest", "minetest" },
-        },properties = { screen = 1, tag = "spēles" }
+        },properties = { screen = 1, tag = "oyunlar" }
       },
 
 
